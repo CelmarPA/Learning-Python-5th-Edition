@@ -1,4 +1,4 @@
-# Quiz Chapter 02
+# Quiz Chapter 03
 
 1. **What is the Python interpreter?**
     Is a program that runs the Python scripts you write.

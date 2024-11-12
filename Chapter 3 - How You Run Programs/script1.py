@@ -4,4 +4,4 @@ print(sys.platform)
 print(2 ** 100)             # Raise 2 to a power
 x = "Spam!"
 print(x * 8)                # String repetition
-input("Press enter to exit")
+input("Press enter to exit")                     #<== ADDED
