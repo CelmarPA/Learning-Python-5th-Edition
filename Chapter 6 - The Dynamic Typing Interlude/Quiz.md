@@ -1,4 +1,4 @@
-# Quiz Chapter 05
+# Quiz Chapter 06
 
 **1. Consider the following three statements. Do they change the value printed for A?**
     `A = "spam"`
