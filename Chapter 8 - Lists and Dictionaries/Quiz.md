@@ -1,22 +1,16 @@
-# Quiz Chapter 07
+# Quiz Chapter 08
 
-1. **Can the string `find` method be used to search a list?**
-    No because methods are always type-specific, that is, they only work on a single data type.
+1. **Name two ways to build a list containing five integer zeros.**
+    A literal expression like [0, 0, 0, 0, 0] and a repetition expression like [0] * 5, will each create a list of five zeros.
 
-2. **Can a string slice expression be used on a list?**
-    Yes, unlike methods expressions are generic and apply to many types. In this case, the slice expression is really a sequence operation, that works on any type of sequence object.
+2. **Name two ways to build a dictionary with two keys, `'a'` and `'b'`, each having an associated value of `0`.**
+    A literal expression like {'a': 0, 'b': 0} or a series of assignments like Dict = {}, D['a'] = 0, D['b'] = 0, or you can also use the newer dict(a=0, b=0) keyword form.
 
-3. **How would you convert a character to its ASCII integer code? How would you convert the other way, from an integer to a character?**
-    The built-in `ord(S)` function converts from one-character string to an integer character code, the `char(I)` converts from the integer code back to a string.
+3. **Name four operations that change a list object in place.**
+    The `append` and `extend` methods grow a list in place, the `sort`, `reverse` methods order and reverse lists.
 
-4. **How might you go about changing a string in Python?**
-    Strings cannot be changed, they are immutable, however, you can achieve similar effect by creating a new string and assigning the result back to the original variable name.
+4. **Name four operations that change a dictionary object in place.**
+    Assignment to a new or existing key, which creates or changes the key's entry in the table. The `del` statement deletes a key's entry, `update` method merges on dictionary into another in place, and `pop` method removes a key and returns the value it had.
 
-5. **Given a string `S` with the value `"s,pa,m"`, name two ways to extract the two characters in the middle.**
-    You can slice the string with `S[2:4]`, or split on the comma and index teh string using `S.split(',')[1]`
-
-6. **How many characters are there in the string `"a\nb\x1f\000d"`?**
-    Six, the string `"a\nb\x1f\000d"` contains the character `a`, new line `\n`, `b`, binary `31` (a hex escape \x1f), binary `0` (an octal escape \000), and `d`.
-
-7. **Why might you use the `string` module instead of string method calls?**
-    You should never use the string module instead of the string method calls today, it's deprecated,  and its  calls are removed completely in Python 3.X.
+5. **Why might you use a dictionary instead of a list?**
+    Dictionaries are generally better when the data is labeled; lists are best suited to collections of unlabeled items. The lookup of dictionary is also usually quicker than searching a list, though this might vary per program.

@@ -13,7 +13,7 @@
     Strings cannot be changed, they are immutable, however, you can achieve similar effect by creating a new string and assigning the result back to the original variable name.
 
 5. **Given a string `S` with the value `"s,pa,m"`, name two ways to extract the two characters in the middle.**
-    You can slice the string with `S[2:4]`, or split on the comma and index teh string using `S.split(',')[1]`
+    You can slice the string with `S[2:4]`, or split on the comma and index teh string using `S.split(',')[1]`.
 
 6. **How many characters are there in the string `"a\nb\x1f\000d"`?**
     Six, the string `"a\nb\x1f\000d"` contains the character `a`, new line `\n`, `b`, binary `31` (a hex escape \x1f), binary `0` (an octal escape \000), and `d`.
