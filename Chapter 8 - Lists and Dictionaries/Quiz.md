@@ -4,7 +4,7 @@
     A literal expression like [0, 0, 0, 0, 0] and a repetition expression like [0] * 5, will each create a list of five zeros.
 
 2. **Name two ways to build a dictionary with two keys, `'a'` and `'b'`, each having an associated value of `0`.**
-    A literal expression like {'a': 0, 'b': 0} or a series of assignments like Dict = {}, D['a'] = 0, D['b'] = 0, or you can also use the newer dict(a=0, b=0) keyword form.
+    A literal expression like {'a': 0, 'b': 0} or a series of assignments like Dict = {}, Dict[`'a'`] = 0, Dict[`'b'`] = 0, or you can also use the newer dict(a=0, b=0) keyword form.
 
 3. **Name four operations that change a list object in place.**
     The `append` and `extend` methods grow a list in place, the `sort`, `reverse` methods order and reverse lists.
