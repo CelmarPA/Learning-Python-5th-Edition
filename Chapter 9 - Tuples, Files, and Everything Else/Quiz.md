@@ -1,16 +1,22 @@
-# Quiz Chapter 08
+# Quiz Chapter 09
 
-1. **Name two ways to build a list containing five integer zeros.**
-    A literal expression like [0, 0, 0, 0, 0] and a repetition expression like [0] * 5, will each create a list of five zeros.
+1. **How can you determine how large a tuple is? Why is this tool located where it is?**
+    The built-in len function returns the length for any container object in Python, including tuples. It is a built-in function instead of a type method because it applies to many different types objects.
 
-2. **Name two ways to build a dictionary with two keys, `'a'` and `'b'`, each having an associated value of `0`.**
-    A literal expression like {'a': 0, 'b': 0} or a series of assignments like Dict = {}, Dict[`'a'`] = 0, Dict[`'b'`] = 0, or you can also use the newer dict(a=0, b=0) keyword form.
+2. **Write an expression that changes the first item in a tuple. `(4, 5, 6)` should become `(1, 5, 6)` in the process.**
+    Tuples are immutable, so you can't really change tuples in place, but you can generate a new tuple with the desired value. Given T = (4, 5, 6), you can change the first item by making a new tuple form its parts by slicing and concatenating: T = (1,) + T[1:].
 
-3. **Name four operations that change a list object in place.**
-    The `append` and `extend` methods grow a list in place, the `sort`, `reverse` methods order and reverse lists.
+3. **What is the default for the processing mode argument in a file open call?**
+    The default for the processing mode argument in a file open call is `r`, for reading text input.
 
-4. **Name four operations that change a dictionary object in place.**
-    Assignment to a new or existing key, which creates or changes the key's entry in the table. The `del` statement deletes a key's entry, `update` method merges on dictionary into another in place, and `pop` method removes a key and returns the value it had.
+4. **What module might you use to store Python objects in a file without converting them to strings yourself?**
+    The `pickle`  module can be used to store Python object in a file without explicitly converting them to strings. The `struct` and `json` also can be used.
 
-5. **Why might you use a dictionary instead of a list?**
-    Dictionaries are generally better when the data is labeled; lists are best suited to collections of unlabeled items. The lookup of dictionary is also usually quicker than searching a list, though this might vary per program.
+5. **How might you go about copying all parts of a nested structure at once?**
+    Import `copy` module, and call `copy.deepcopy(X)` if you need to copy all parts of a nested structure X.
+
+6. **When does Python consider an object true?**
+    When is either a nonzero number or a nonempty collection object.
+
+7. **What is your quest?**
+    To Learn Python.
