@@ -1,7 +1,7 @@
 # Quiz Chapter 10
 
 1. **What three things are required in a C-like language but omitted in Python?**
-    C-like languages require parenteses around the test in some statements, semicolons at the end od each statement, and braces around a nested block of code.
+    C-like languages require parentheses around the test in some statements, semicolons at the end od each statement, and braces around a nested block of code.
 
 2. **How is a statement normally terminated in Python?**
     The end of a line terminates the statement that appears on that line.
