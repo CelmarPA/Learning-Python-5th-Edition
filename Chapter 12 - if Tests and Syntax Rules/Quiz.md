@@ -1,13 +1,13 @@
-# Quiz Chapter 11
+# Quiz Chapter 12
 
-1. **Name three ways that you can assign three variables to the same value.**
-    Multiple-target assignments (A = B = C = 0), sequence assignment (A, B, C = 0, 0, 0), or multiple assignment statements on three separate lines (A = 0, B = 0, C = 0).
+1. **How might you code a multiway branch in Python?**
+    An if statement with multiple elif clauses is often the most straightforward way to do this, dictionary indexing can often achieve the same resulta, especially if the dictionary contains callable functions coded with def statements or lambda expressions.
 
-2. **Why might you need to care when assigning three variables to a mutable object?**
-    If you assign them this way: A = B = C = [], all three names reference the same object, so changing it in place from one (e.g., A.append(99)) will affect the others. This happens only for in-place changes to mutable objects.
+2. **How can you code an `if/else` statement as an expression in Python?**
+    The expression form Y if X else Z return Y if X is true, or Z otherwise; it's the same as a four-line if statement. The and/or combination (((X and Y) or Z)) can work the same way, but requires that the Y part be true.
 
-3. **What’s wrong with saying `L = L.sort()`?**
-    The list `sort` method is like `append` in that it makes an in-place change to the subject list; it returns `None`, not the list it changes.
+3. **How can you make a single statement span many lines?**
+    Wrap up the statement in an open syntactic pair ((), [], {}), and it can span as many lines as you like; the statement ends when Python sees the closing  (right) half of the pair. Backslash continuations work too, but are broadly discouraged in the Python world.
 
-4. **How might you use the `print` operation to send text to an external file?**
-    To print to a file for a single print operation, you can use 3.X's (print(X, file=F)) call form.
+4. **What do the words `True` and `False` mean?**
+    `True` and `False` are just custom versions of the integers 1 and 0, respectively: they always stand for Boolean true and false values in Python.
