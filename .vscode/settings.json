@@ -1,3 +1,9 @@
 {
-    "cSpell.words": ["docstrings", "multiway", "noncompound", "startswith"]
+    "cSpell.words": [
+        "docstrings",
+        "multiway",
+        "noncompound",
+        "nonlocal",
+        "startswith"
+    ]
 }
