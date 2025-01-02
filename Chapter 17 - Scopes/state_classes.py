@@ -27,3 +27,21 @@ class Tester:
 H = Tester(99)
 H('juice')      # Invokes __call__
 H('pancakes')
+
+
+def tester(start):
+    def nested(label):
+        print(label, state[0])      # Leverage in-place mutable change
+        state[0] += 1       # Extra syntax, deep magic?
+    state = [start]
+    return nested
+
+F = tester(0)
+F('spam')
+F('eggs')
+
+G = tester(42)
+G('toast')
+G('bacon')
+
+F('ham')
