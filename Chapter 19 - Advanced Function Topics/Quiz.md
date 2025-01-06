@@ -1,67 +1,22 @@
 # Quiz Chapter 19
 
-1. **What is the output of the following code, and why?**
+1. **How are lambda expressions and def statements related?**
+   Both `lambda` and `def` create function objects to be called later. Because `lambda` is an expression, though,  it returns a function object instead of assigning it to a name, and it can be used to nest a function definition in places were a `def` will not work syntactically.
 
-   ```python
-    def func(a, b=4, c=5):
-        print(a, b, c)
-   
-    func(1, 2)
-   ```
-   
-    The output here is `1 2 5`, because `1` and `2` are passed to `a` and `b` by position, and `c` is omitted in the call and defaults to `5`.
+2. **What’s the point of using lambda?**
+   `lambdas` allow us to "inline" small units od executable code, defer its execution, and provide it with state in the form of default arguments and enclosing scope variables. Using `lambda` is never required, you can always code a def instead and reference the function by name. `lambdas` come in handy, though, to embed small pieces of deferred code that are unlikely to be used elsewhere in a program. They commonly appear in callback-based programs such as GUIs, and they have a natural affinity with functional tools like `map` and `filter` that expect a processing function.
 
-2. **What is the output of this code, and why?**
+3. **Compare and contrast map, filter, and reduce.**
+   These three built-in functions all apply another function to items in a sequence (or other iterable) object and collect results. `map` passes each item to the function and collects all results, `filter` collects items for which the function returns a `True` value, and `reduce` computes a single value by applying the function to and accumulator and successive items.
 
-   ```python
-    def func(a, b, c=5):
-        print(a, b, c)
-   
-    func(1, c=3, b=2)
-   ```
-   
-    The output here is `1 2 3`; `1` is passed to `a` by position, and `b` and `c` are passed `2` and `3` by name.
+4. **What are function annotations, and how are they used?**
+   Function annotations, are syntactic embellishments of a function's arguments and result, which are collected into a dictionary assigned to the function's `__annotations__` attribute. Python places no semantic meaning on these annotations, but simply packages them for potential use by other tools.
 
-3. **How about this code: what is its output, and why?**
+5. **What are recursive functions, and how are they used?**
+   Recursive functions call themselves either directly or indirectly in order to loop. They may be used to traverse arbitrarily shaped structures, but they can also be used for iteration in general.
 
-   ```python
-    def func(a, *pargs):
-        print(a, pargs)
-   
-    func(1, 2, 3)
-   ```
-   
-    This code prints `1 (2, 3)`, because `1` is passed to a and the `*pargs` collects the remaining positional arguments into a new tuple object. We can step through the extra positional arguments tuple with any iteration tool.
+6. **What are some general design guidelines for coding functions?**
+   Functions should generally ve small and as self-contained as possible, have a single unified purpose, and communicate with other components through input arguments and return values.
 
-4. **What does this code print, and why?**
-
-   ```python
-    def func(a, **kargs):
-        print(a, kargs)
-   
-    func(a=1, c=3, b=2)
-   ```
-   
-    This time the code prints `1 {'c': 3, 'b': 2}`, because `1` is passed to `a` by name and the `**kargs` collects the remaining keyword arguments into a dictionary. We could step through the extra keyword arguments dictionary by key  with any iteration tool.
-
-5. **What gets printed by this, and why?**
-
-   ```python
-    def func(a, b, c=3, d=4): print(a, b, c, d)
-
-    func(1, *(5, 6))
-   ```
-   
-    The output here is `1 5 6 4`; the `1` matches `a` by position, `5` and `6`, match `b` and `c` by *name positionals (`6` overrides `c`’s default), and `d` defaults to `4` because it was not passed a value.
-
-6. **One last time: what is the output of this code, and why?**
-
-   ```python
-    def func(a, b, c): a = 2; b[0] = 'x'; c['a'] = 'y
-
-    l=1; m=[1]; n={'a':0}
-   func(l, m, n)
-   l, m, n
-   ```
-   
-    This displays `(1, ['x'], {'a': 'y'})`; the first assignment in the function doesn't impact the caller, but the second two do because they change passed-in mutable objects in place.
+7. **Name three or more ways that functions can communicate results to a caller.**
+   Functions can send back results with `return` statements, by changing passed-in mutable arguments, and by setting global variables.

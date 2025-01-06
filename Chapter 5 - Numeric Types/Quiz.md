@@ -16,7 +16,7 @@
     The result will be a floating-point number, the integers are converted up to a floating point, the most complex type in the expression.
 
 6. **How can you truncate and round a floating-point number?**
-    The `int(N)` and `math.trunc(N)` functions truncate, and the `round(N, digits)` function rounds. The floor can also be compute with `math.floor(N)`, and round for display with string formatting operations.
+    The `int(N)` and `math.trunc(N)` functions truncate, and the `round(N, digits)` function rounds. The floor can also be computed with `math.floor(N)`, and round for display with string formatting operations.
 
 7. **How can you convert an integer to a floating-point number?**
     The `float(I)` function converts an integer to a floating point, mixing an integer with a floating point within an expression will result in a conversion as well.
