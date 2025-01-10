@@ -9,22 +9,24 @@ repslist = list(range(reps))        # Hoist out, list in both 2.X/3.X
 def forLoop():
     res = []
     for x in repslist:
-        res.append(x + 10)
+        res.append(F(x))
     return res
 
+def F(x): return x
+
 def lisComp():
-    return [x + 10 for x in repslist]
+    return [F(x) for x in repslist]
 
 def mapCall():
-    return list(map((lambda x: x + 10), repslist))          # list() in 3.X only
+    return list(map(F, repslist))          # list() in 3.X only
 
 def genExpr():
-    return list(x + 10 for x in repslist)       # list() in 2.X + 3.X
+    return list(F(x) for x in repslist)       # list() in 2.X + 3.X
 
 def genFunc():
     def gen():
         for x in repslist:
-            yield x + 10
+            yield F(x)
     return list(gen())      # list in 2.X + 3.X
 
 print(sys.version)

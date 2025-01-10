@@ -1,4 +1,4 @@
-import sys, timer2
+import sys, timer3
 
 reps = 10000
 
@@ -29,7 +29,7 @@ def genFunc():
 print(sys.version)
 
 for test in (forLoop, listComp, mapCall, genExpr, genFunc):
-    (total, result) = timer2.bestoftotal(test, _reps1 = 5, _reps = 1000)
+    (total, result) = timer3.bestoftotal(test, _reps1 = 5, _reps = 1000)
 
 # Or:
     # (total, result) = timer2.bestoftotal(test)
