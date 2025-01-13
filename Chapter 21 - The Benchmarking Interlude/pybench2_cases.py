@@ -6,7 +6,7 @@
     listed, or a "py −3 pybench_cases.py -a -t" to trace command lines too.
 """
 
-import pybench, sys
+import pybench2, sys
 
 pythons = [         # (ispy3?, path)
     (1, 'C:\\python312\\python'),
@@ -22,15 +22,15 @@ pythons2 = [         # (ispy3?, path); or can use this instead
 ]
 
 
-stmts = [       # (num,rpt,stmt)
-    (0, 0, "[x ** 2 for x in range(1000)]"),         # Iterations
-    (0, 0, "res=[]\nfor x in range(1000): res.append(x ** 2)"),         # \n=multistmt
-    (0, 0, "$listif3(map(lambda x: x ** 2, range(1000)))"),   # \n\t=indent
-    (0, 0, "list(x ** 2 for x in range(1000))"),         # $=list or ''
-    (0, 0, "s = 'spam' * 2500\nx = [s[i] for i in range(10000)]"),      # String ops
-    (0, 0, "s = '?'\nfor i in range(10000): s += '?'"),
+stmts = [       # (num, rpt, setup, stmt)
+    (0, 0, "", "[x ** 2 for x in range(1000)]"),         # Iterations
+    (0, 0, "", "res=[]\nfor x in range(1000): res.append(x ** 2)"),       # \n=multistmt
+    (0, 0, "def f(x):\n\treturn x", "[f(x) for x in 'spam' * 2500]"),
+    (0, 0, "def f(x):\n\treturn x", "res=[]\nfor x in 'spam' *2500:\n\tres.append(f(x))"),
+    (0, 0, "L = [1, 2, 3, 4, 5]", "for i in range(len(L)): L[i] += 1"),
+    (0, 0, "L = [1, 2, 3, 4, 5]", "i=0\nwhile i < len(L):\n\tL[i] += 1\n\ti += 1")
 ]
 
 tracecmd = '-t' in sys.argv         # -t: trace command lines?
 pythons = pythons if '-a' in sys.argv else None         # -a: all in list, else one?
-pybench.runner(stmts, pythons, tracecmd)
+pybench2.runner(stmts, pythons, tracecmd)
