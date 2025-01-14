@@ -1,29 +1,29 @@
-import sys, timer2
+def dictComp(j):
+    return {i: i for i in range(j)}
 
-reps = 10000
-repslist = range(reps)
+def dictLoop(j):
+    new = {}
+    for i in range(j): new[i] = i
+    return new
 
-from math import sqrt
+print(dictComp(10))
 
-def mathMod():
-    for i in repslist:
-        res = sqrt(i)
-    return res
+print(dictLoop(10))
 
-def powCall():
-    for i in repslist:
-        res = pow(i, .5)
-    return res
+from timer2 import total, bestof
 
-def powExpr():
-    for i in repslist:
-        res = i ** .5
-    return res
+print(bestof(dictComp, 10000)[0])       # 10,000-item dict
 
-print(sys.version)
+print(bestof(dictLoop, 10000)[0])
 
-for test in (mathMod, powCall, powExpr):
-    elapsed, result = timer2.bestoftotal(test, _reps1 = 3, _reps = 1000)
-    print('%s %.5f => %s' % (test.__name__, elapsed, result))
+print(bestof(dictComp, 100000)[0])      # 100,000-items: 10X slower
 
-    
+print(bestof(dictLoop, 100000)[0])
+
+print(bestof(dictComp, 1000000)[0])      # 1 of 1M-items: 10X time
+
+print(bestof(dictLoop, 1000000)[0])
+
+print(total(dictComp, 1000000, _reps = 50)[0])      # Total to make 50 1M-item dicts
+
+print(total(dictLoop, 1000000, _reps = 50)[0])
