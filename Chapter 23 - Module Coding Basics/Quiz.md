@@ -1,21 +1,19 @@
-# Quiz Chapter 22
+# Quiz Chapter 23
 
-1. **How does a module source code file become a module object?**
-    Am module's source code file automatically becomes a module object when that module is imported.
+1. **How do you make a module?**
+    To create a module, you simply write a text file containing Python statements; every source code file is automatically a module, and there is no syntax for declaring one.
 
-2. **Why might you have to set your `PYTHONPATH` environment variable?**
-    It's necessary only to import from directories other than the one in which you are working
-   (i.e., the current directory when working interactively, or the directory containing your top level file).
+2. **How is the `from` statement related to the `import` statement?**
+    The `from` statement imports an entire module, like the `import` statement, but as an extra step it also copies one or more variables from the imported module into the scope where the `from` appears.
 
-3. **Name the five major components of the module import search path.**
-    The five major components of the module import search path are the top-level script's home directory, all directories listed in the `PYTHONPATH` environment variable, the standard library directories, all directories listed in .pth path files located in standard places, and the site-packages roots directory for third-party extension installs.
+3. **How is the `reload` function related to imports?**
+    By default, a module is imported only once per process. The `reload` function forces a module to be imported again. It is mostly used to pick up a new version of a module's source code during development and dynamic customization scenarios.
 
-4. **Name four file types that Python might load in response to an import operation.**
-    The source code (`.py`) file, a byte code (`.pyc` or `.pyo`) file, a C extension module (e.g., a `.so` file on Linux or a `.dll` or `.pyd` file on Windows), or a directory of the same name for package imports. Imports may also load more exotic things such as `ZIP` files components, `Java` classes under a Jython version of Python, `.NET` components under IronPython, and statically linked C extensions that have no file present at all.
+4. **When must you use `import` instead of `from`?**
+    You must use `import` instead of `from` only when you need to access the same name in two different modules; because you'll have to specify the names of the enclosing modules, the two names will be unique.
 
-5. **What is a namespace, and what does a module’s namespace contain?**
-    A `namespace` is a self-contained package of variables, which are known as the `attributes` of the namespace object.
-   A module's namespace contains all the names assigned by code at the top level of the module file
-   (i.e., not nested in def or class statements).
-   Technically, a module's global scope morphs into the module object's attribute's namespace.
-   A module's namespace may also be altered by assignments from other files that import it.
+5. **Name three potential pitfalls of the `from` statement.**
+    The `from` statement can obscure the meaning of a variable, can have problems with reload call, and can corrupt namespaces. The `from *` form is worse in most regards; it can seriously corrupt namespaces and obscure the meaning of variables, so it is probably best used sparingly.
+
+6. **What...is the airspeed velocity of an unladen swallow?**
+    An African or European swallow? lol
