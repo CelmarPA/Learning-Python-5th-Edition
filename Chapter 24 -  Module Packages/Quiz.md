@@ -1,4 +1,4 @@
-# Quiz Chapter 23
+# Quiz Chapter 24
 
 1. **What is the purpose of an `__init__.py` file in a module package directory?**
     The `__init__.py` file serves to declare and initialize a regular module package. Its assigned variables become the attributes of the module object created in memory to correspond to that directory.
