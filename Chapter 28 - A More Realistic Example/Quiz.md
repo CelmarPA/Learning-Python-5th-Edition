@@ -1,4 +1,4 @@
-# Quiz Chapter 27
+# Quiz Chapter 28
 
 1. **When we fetch a Manager object from the `shelve` and print it, where does the display format logic come from?**
     In the final version of our class, `Manager` ultimately inherits its `__repr__` printing method from `AttrDisplay` in the separate `classtools` module and two levels up in the class tree. `Manager` doesn't have one itself, so the inheritance search climbs to its `Person` superclass; because there is no `__repr__` there either, the search climbs higher and finds it in `AttrDisplay`.
