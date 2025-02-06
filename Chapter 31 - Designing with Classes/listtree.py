@@ -1,0 +1,4 @@
+#!python
+
+class ListTree:
+    pass

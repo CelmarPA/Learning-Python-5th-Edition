@@ -1,0 +1,4 @@
+#!python
+
+class ListInherited:
+    pass
