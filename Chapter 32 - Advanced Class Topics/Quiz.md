@@ -1,4 +1,4 @@
-# Quiz Chapter 31
+# Quiz Chapter 32
 
 1. **Name two ways to extend a built-in object type.**
     You can embed a built-in object in a wrapper class, or subclass the built-in type directly. The latter approach tends to be simpler, as most original behavior is automatically inherited.
