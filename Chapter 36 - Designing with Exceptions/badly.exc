@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\Cursos de Programação\Learning-Python-5th-Edition\Chapter 36 - Designing with Exceptions\displaying_errors_and_tracebacks.py", line 7, in <module>
+    inverse(0)
+    ~~~~~~~^^^
+  File "D:\Cursos de Programação\Learning-Python-5th-Edition\Chapter 36 - Designing with Exceptions\displaying_errors_and_tracebacks.py", line 4, in inverse
+    return 1 / x
+           ~~^~~
+ZeroDivisionError: division by zero

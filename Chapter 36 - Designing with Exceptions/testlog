@@ -1,0 +1,20 @@
+PASSED Test 1
+FAILED Test 2 (<class 'Exception'>, Exception('Test 2 failed'))
+PASSED Test 3
+FAILED Test 4 (<class 'Exception'>, Exception('Test 4 failed'))
+PASSED Test 1
+FAILED Test 2 (<class 'Exception'>, Exception('Test 2 failed'))
+PASSED Test 3
+FAILED Test 4 (<class 'Exception'>, Exception('Test 4 failed'))
+PASSED Test 1
+FAILED Test 2 (<class 'Exception'>, Exception('Test 2 failed'))
+PASSED Test 3
+FAILED Test 4 (<class 'Exception'>, Exception('Test 4 failed'))
+PASSED Test 1
+FAILED Test 2 (<class 'Exception'>, Exception('Test 2 failed'))
+PASSED Test 3
+FAILED Test 4 (<class 'Exception'>, Exception('Test 4 failed'))
+PASSED Test 1
+FAILED Test 2 (<class 'Exception'>, Exception('Test 2 failed'))
+PASSED Test 3
+FAILED Test 4 (<class 'Exception'>, Exception('Test 4 failed'))
