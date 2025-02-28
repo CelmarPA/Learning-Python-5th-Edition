@@ -1,1 +1,16 @@
 # Quiz Chapter 38
+
+1. **How do `__getattr__` and `__getattribute__` differ?**
+    The `__getattr__` method is rum for fetches of *undefined* attributes only (i.e., those not present on an instance and not inherited from any of its classes). By contrast, the `__getattribute__` method is called for *every* attribute fetch whether the attribute is defined or not. Because of this, code inside a `__getattr__` can freely fetch other attributes if they are defined, whereas `__getattribute__` must use special code for all attribute fetches to avoid looping or extra calls. (It must route fetches to a superclass to skip itself.)
+
+2. **How do properties and descriptors differ?**
+    Properties serve a specific role, while descriptors are more general. Properties define get, set, and delete functions for a specific attribute; descriptors provide a class with methods for these actions, too, but they provide extra flexibility to support more arbitrary actions. In fact, properties are really a simple way to create a specific kind of descriptor—one that runs functions on attribute accesses. Coding differs too: a property is created with a built-in function, and a descriptor is coded with a class; thus, descriptors can leverage all the usual OOP features of classes, such as inheritance. Moreover, in addition to the instance's state information, descriptors have local state of their own, so they can sometimes avoid name collisions in the instance.
+
+3. **How are properties and decorators related?**
+    Properties can be coded with decorator syntax. Because the `property` built-in accepts a single function argument, it can be used directly as a function decorator to define a fetch access property. Due to the name rebinding behavior of decorators, the name of the decorated function is assigned to a property whose get accessor is set to the original function decorated (`name = property(name)`). Property `setter` and `deleter` attributes allow us to further add set and delete accessors with decoration syntax—they set the accessor to the decorated function and return the augmented property.
+
+4. **What are the main functional differences between `__getattr__`, `__getattribute__`, properties, and descriptors?**
+    The `__getattr__` and `__getattribute__` methods are more generic: they can be used to catch arbitrary many attributes. In contrast, each property or descriptor provides access interception for only one specific attribute—we can't catch every attribute fetch with a single property or descriptor. On the other hand, properties and descriptors handle both attribute fetch and *assignment* by design: `__getattr__` and `__getattribute__` handle fetches only; to intercept assignments as well, `__setattr__` must also be coded. The implementation is also different: `__getattr__` and `__getattribute__` are operator overloading methods, whereas properties and descriptors are objects manually assigned to class attributes. Unlike the others, properties and descriptors can also sometimes avoid extra calls on assignment to unmanaged names, and show up in `dir` results automatically, but are also narrower in scope—they can't address generic dispatch goals.
+
+5. **Isn’t all this feature comparison just a kind of argument?**
+    No it isn't.
